@@ -28,6 +28,7 @@ body {
 
 .buttons {
     margin-top: 20px;
+    gap: 5px; /* Adds 20px of space between flex items */
 }
 
 #next-button, #prev-button {
