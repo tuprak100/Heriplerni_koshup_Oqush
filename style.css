@@ -20,38 +20,21 @@ body {
 }
 
 #flashcard {
-    max-width: 95vw;
-    max-height: 95vh;
+    max-width: 99vw;
+    max-height: 99vh;
     border: 1px solid #ccc;
     object-fit: contain;
 }
 
-.buttons { /* Style the container of the buttons */
-    display: flex; /* Use flexbox for easy spacing */
-    justify-content: center; /* Center the buttons horizontally */
-    margin-top: 10px; /* Space above the buttons */
-}
-
-#prev-button {
-    margin-right: 20px; /* Adds 20px of space to the right of the previous button */
-}
-
-#next-button {
-    margin-left: 20px; /* Adds 20px of space to the left of the next button */
+.buttons {
+    display: flex; /* Enable flexbox for the container */
+    justify-content: center; /* Center buttons horizontally */
+    gap: 20px; /* Adds 20px of space between buttons */
+    margin-top: 20px; /* Add some top margin as well */
 }
 
 #next-button, #prev-button {
-    padding: 15px 30px;
-    font-size: 18px;
-    background-color: #4CAF50; /* Green by default */
-    border: none;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.2s; /* Smooth transition for hover and transform */
+    /* ... other button styles (padding, font-size, etc.) ... */
 }
 
 #next-button:hover, #prev-button:hover {
@@ -64,5 +47,5 @@ body {
 }
 
 #card-number {
-    margin-top: 10px;
+    margin-top: 15px;
 }
