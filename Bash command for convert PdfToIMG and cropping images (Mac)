@@ -1,0 +1,46 @@
+1. Install 
+macOS (using Homebrew):
+If you don't have Homebrew, install it first:
+
+''''
+bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+''''
+
+Then install ImageMagick:
+''''
+bash
+brew install imagemagick
+''''
+2. Convert PDF to Images:
+
+The first step is to convert each page of your PDF into a raster image (like PNG or TIFF). This makes it easier to work with individual words as image regions.
+Tool:
+ImageMagick (Command-line): A powerful and versatile command-line tool for image manipulation. Highly recommended for batch processing.
+change the input to your pdf file name.
+''''
+convert input.pdf page_%d.png
+''''
+
+3. My pdf file has 2 columns and 4 raws, total 8 words each page. The following bash command will crop each word. 
+Note, I cropped the image again to only include areas with the square (2*4).
+
+''''
+bash
+# Assuming each page image is named page_N.png
+page_width=$(identify -format "%w" page_0.png)
+page_height=$(identify -format "%h" page_0.png)
+square_width=$((page_width / 2)) # Divide by 2 for 2 columns
+square_height=$((page_height / 4)) # Divide by 4 for 4 rows
+
+for page in $(seq 0 23); do # loop through the 24 pages
+  for row in $(seq 0 3); do # Loop from 0 to 3 (4 rows)
+    for col in $(seq 0 1); do # Loop from 0 to 1 (2 columns)
+      x=$((col * square_width))
+      y=$((row * square_height))
+      output_file="page_${page}_row_${row}_col_${col}.png"
+      magick page_${page}.png -crop ${square_width}x${square_height}+${x}+${y} ${output_file}
+    done
+  done
+done
+''''''
