@@ -17,13 +17,14 @@ brew install imagemagick
 The first step is to convert each page of your PDF into a raster image (like PNG or TIFF). This makes it easier to work with individual words as image regions.
 Tool:
 ImageMagick (Command-line): A powerful and versatile command-line tool for image manipulation. Highly recommended for batch processing.
-change the input to your pdf file name.
+   change the input to your PDF file name.
 ''''
 convert input.pdf page_%d.png
 ''''
-
-3. My pdf file has 2 columns and 4 raws, total 8 words each page. The following bash command will crop each word. 
-Note, I cropped the image again to only include areas with the square (2*4).
+My PDF file had 24 pages, each page had 8 words, 2 columns 4 raws. 
+I cropped the PNG image to the extent of a 2*4 square area only (removed white space from four corners). This will ensure we can crop each word correctly.
+3. The following bash command will crop each word. 
+Note, that I cropped the image again to only include areas with the square (2*4).
 
 ''''
 bash
