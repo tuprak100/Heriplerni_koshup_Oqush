@@ -21,19 +21,19 @@ body {
 
 #flashcard {
     max-width: 90vw;
-    max-height: 70vh;
+    max-height: 90vh;
     border: 1px solid #ccc;
     object-fit: contain;
 }
 
 .buttons {
-    margin-top: 10px;
+    margin-top: 30px;
 }
 
 button {
-    padding: 10px 20px;
+    padding: 30px 40px;
     margin: 0 5px;
-    font-size: 16px;
+    font-size: 26px;
     background-color: #4CAF50;
     border: none;
     color: white;
