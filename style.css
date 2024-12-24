@@ -20,33 +20,43 @@ body {
 }
 
 #flashcard {
-    max-width: 99vw;
-    max-height: 99vh;
+    max-width: 90vw; /* Reduced to 90vw for better fit on most screens */
+    max-height: 80vh; /* Reduced to 80vh for better fit */
     border: 1px solid #ccc;
     object-fit: contain;
 }
 
 .buttons {
-    display: flex; /* Enable flexbox for the container */
-    justify-content: center; /* Center buttons horizontally */
-    gap: 20px; /* Adds 20px of space between buttons */
-    margin-top: 20px; /* Add some top margin as well */
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
 }
 
 #next-button, #prev-button {
-    font-size: 18px
-    /* ... other button styles (padding, font-size, etc.) ... */
+    font-size: 20px; /* Increased font size */
+    padding: 15px 30px; /* Increased padding for larger button */
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s;
+    min-width: 150px; /* Ensure buttons have a minimum width */
 }
 
 #next-button:hover, #prev-button:hover {
-    background-color: #45a049; /* Darker green on hover */
+    background-color: #45a049;
     transform: scale(1.05);
 }
 
 #next-button {
-    background-color: blue; /* Overrides green for next button */
+    background-color: blue;
 }
 
 #card-number {
     margin-top: 15px;
+    font-size: 1.2em; /* Slightly larger card number font */
 }
