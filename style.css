@@ -34,6 +34,7 @@ body {
 }
 
 #next-button, #prev-button {
+    font-size: 18px
     /* ... other button styles (padding, font-size, etc.) ... */
 }
 
@@ -43,7 +44,7 @@ body {
 }
 
 #next-button {
-    background-color: crimson; /* Overrides green for next button */
+    background-color: blue; /* Overrides green for next button */
 }
 
 #card-number {
