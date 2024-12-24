@@ -1,4 +1,4 @@
-const images = [];
+
 const cardImage = document.getElementById('flashcard');
 const nextButton = document.getElementById('next-button');
 const prevButton = document.getElementById('prev-button');
@@ -14,9 +14,22 @@ document.getElementById('card-container').appendChild(congratulationsMessage); /
 
 const imageBaseURL = "https://raw.githubusercontent.com/tuprak100/Heriplerni_koshup_Oqush/main/images/";
 
-for (let i = 1; i <= 192; i++) {
-    images.push(imageBaseURL + `img${i}.png`);
+const images = [];
+
+// Assuming 4 rows and 2 columns per page (adjust as needed)
+const numRows = 4;
+const numCols = 2;
+const numPages = 24; // we have 24 page for now
+
+for (let page = 0; page < numPages; page++) {
+  for (let row = 0; row < numRows; row++) {
+    for (let col = 0; col < numCols; col++) {
+      images.push(imageBaseURL + `page_${page}_row_${row}_col_${col}.png`);
+    }
+  }
 }
+
+console.log(images); // To verify the generated image URLs
 
 function showCard() {
     cardImage.src = images[currentCard];
