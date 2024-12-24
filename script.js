@@ -24,8 +24,12 @@ function showCard() {
     congratulationsMessage.style.display = 'none'; // Hide message when showing a card
     // Play the audio when showing a card (assuming desired behavior)
     const cardSound = document.getElementById('cardSound');
-    cardSound.currentTime = 0; // Reset playback time (optional)
+    cardSound.currentTime = 9; // Reset playback time (optional)
     cardSound.play(); // Play the audio
+
+    // use if we want continues music
+    //cardSound.loop = true; // Set the loop property to true
+//cardSound.play(); // Start playing the music once.
 }
 
 nextButton.addEventListener('click', () => {
