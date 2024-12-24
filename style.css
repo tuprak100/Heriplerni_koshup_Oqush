@@ -26,9 +26,18 @@ body {
     object-fit: contain;
 }
 
-.buttons {
-    margin-top: 20px;
-    gap: 20px; /* Adds 20px of space between flex items */
+.buttons { /* Style the container of the buttons */
+    display: flex; /* Use flexbox for easy spacing */
+    justify-content: center; /* Center the buttons horizontally */
+    margin-top: 10px; /* Space above the buttons */
+}
+
+#prev-button {
+    margin-right: 20px; /* Adds 20px of space to the right of the previous button */
+}
+
+#next-button {
+    margin-left: 20px; /* Adds 20px of space to the left of the next button */
 }
 
 #next-button, #prev-button {
