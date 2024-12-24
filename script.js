@@ -13,7 +13,7 @@ const cardNumberDisplay = document.getElementById('card-number');\
 let currentCard = 0;\
 \
 // ***REPLACE THIS WITH YOUR ACTUAL GITHUB RAW URL***\
-const imageBaseURL = "https://github.com/tuprak100/Heriplerni_koshup_Oqush/tree/main/images";\
+const imageBaseURL = "https://github.com/tuprak100/Heriplerni_koshup_Oqush/tree/main/images/";\
 \
 for (let i = 1; i <= 192; i++) \{\
     images.push(imageBaseURL + `img$\{i\}.jpg`); // Or .png\
