@@ -16,7 +16,7 @@ let currentCard = 0;\
 const imageBaseURL = "https://raw.githubusercontent.com/tuprak100/Heriplerni_koshup_Oqush/tree/main/images/";\
 \
 for (let i = 1; i <= 192; i++) \{\
-    images.push(imageBaseURL + `img$\{i\}.png`); // Or .png\
+    images.push(imageBaseURL + `img$\{i\}.png`); // Or .jpg\
 \}\
 \
 function showCard() \{\
