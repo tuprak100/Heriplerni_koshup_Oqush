@@ -20,8 +20,8 @@ body {
 }
 
 #flashcard {
-    max-width: 90vw; /* Reduced to 90vw for better fit on most screens */
-    max-height: 80vh; /* Reduced to 80vh for better fit */
+    max-width: 99vw; /* Reduced to 90vw for better fit on most screens */
+    max-height: 99vh; /* Reduced to 80vh for better fit */
     border: 1px solid #ccc;
     object-fit: contain;
 }
@@ -35,7 +35,7 @@ body {
 
 #next-button, #prev-button {
     font-size: 20px; /* Increased font size */
-    padding: 15px 30px; /* Increased padding for larger button */
+    padding: 20px 35px; /* Increased padding for larger button */
     background-color: #4CAF50;
     border: none;
     color: white;
