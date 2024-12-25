@@ -40,6 +40,30 @@ body {
     margin-top: 20px;
 }
 
+.all-cards-button { /* Styles for the new container */
+    display: flex;
+    justify-content: center; /* Center the button horizontally */
+    margin-top: 20px; /* Add some top margin */
+}
+
+#allCardsButton {
+    font-size: 20px;
+    padding: 10px 15px;
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+#allCardsButton:hover {
+    background-color: #007bb5;
+    transform: scale(1.05);
+}
+
 #next-button,
 #prev-button {
     font-size: 20px;
