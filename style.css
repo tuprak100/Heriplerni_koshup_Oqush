@@ -65,19 +65,19 @@ body {
     font-size: 1.2em;
 }
 
-/* Styles for the favorite button */
+/* Styles for the favorite button (STAR) */
 #favoriteButton {
     border: none;
     background: none;
     font-size: 24px;
     cursor: pointer;
     padding: 0;
-    color: lightblue;
+    color: gold; /* Gold color for the empty star */
     transition: color 0.3s ease;
 }
 
 #favoriteButton.favorited {
-    color: red;
+    color: orange; /* Orange color for the filled star */
 }
 
 #reviewFavorites {
