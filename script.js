@@ -4,6 +4,7 @@ const prevButton = document.getElementById('prev-button');
 const cardNumberDisplay = document.getElementById('card-number');
 const favoriteButton = document.getElementById('favoriteButton');
 const reviewFavoritesButton = document.getElementById('reviewFavorites');
+const allCardsButton = document.getElementById('allCardsButton'); // Add this button
 const congratulationsMessage = document.createElement('p');
 congratulationsMessage.textContent = "Congratulations! You've finished all the flashcards!";
 congratulationsMessage.style.display = 'none';
@@ -14,10 +15,12 @@ document.getElementById('card-container').appendChild(congratulationsMessage);
 
 const imageBaseURL = "https://raw.githubusercontent.com/tuprak100/Heriplerni_koshup_Oqush/main/images/";
 let images = [];
+let originalImages = []; // Store the original images here
 const numRows = 4;
 const numCols = 2;
 const numPages = 24;
 let favoriteWords = [];
+let isReviewingFavorites = false; // Track if reviewing favorites
 
 function generateImageURLs() {
     for (let page = 0; page < numPages; page++) {
@@ -27,6 +30,7 @@ function generateImageURLs() {
             }
         }
     }
+    originalImages = [...images]; // Create a copy of the original array
 }
 
 generateImageURLs();
@@ -40,9 +44,9 @@ function showCard() {
     favoriteButton.textContent = images[currentCard].favorite ? "★" : "☆";
     if (images[currentCard].favorite) {
         favoriteButton.classList.add("favorited");
-    } else {
+      } else {
         favoriteButton.classList.remove("favorited");
-    }
+      }
     const cardSound = document.getElementById('cardSound');
     cardSound.loop = true;
     cardSound.play();
@@ -50,7 +54,7 @@ function showCard() {
 
 nextButton.addEventListener('click', () => {
     currentCard = (currentCard + 1) % images.length;
-    if (currentCard === 0) {
+    if (currentCard === 0 && isReviewingFavorites === false) {
         congratulationsMessage.style.display = 'block';
         cardImage.src = "";
         cardNumberDisplay.textContent = "";
@@ -67,7 +71,7 @@ prevButton.addEventListener('click', () => {
 favoriteButton.addEventListener('click', () => {
     images[currentCard].favorite = !images[currentCard].favorite;
     favoriteButton.textContent = images[currentCard].favorite ? "★" : "☆";
-    if (images[currentCard].favorite) {
+        if (images[currentCard].favorite) {
         favoriteButton.classList.add("favorited");
       } else {
         favoriteButton.classList.remove("favorited");
@@ -83,6 +87,14 @@ reviewFavoritesButton.addEventListener('click', () => {
     }
     images = favoriteWords;
     currentCard = 0;
+    isReviewingFavorites = true; // Set the flag
+    showCard();
+});
+
+allCardsButton.addEventListener('click', () => { // Add event listener for the new button
+    images = originalImages;// Restore the original images
+    currentCard = 0;
+    isReviewingFavorites = false;// Reset the flag
     showCard();
 });
 
