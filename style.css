@@ -20,8 +20,8 @@ body {
 }
 
 #flashcard {
-    max-width: 99vw; /* Reduced to 90vw for better fit on most screens */
-    max-height: 99vh; /* Reduced to 80vh for better fit */
+    max-width: 99vw;
+    max-height: 99vh;
     border: 1px solid #ccc;
     object-fit: contain;
 }
@@ -34,8 +34,8 @@ body {
 }
 
 #next-button, #prev-button {
-    font-size: 20px; /* Increased font size */
-    padding: 20px 35px; /* Increased padding for larger button */
+    font-size: 20px;
+    padding: 20px 35px;
     background-color: #4CAF50;
     border: none;
     color: white;
@@ -44,7 +44,7 @@ body {
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s ease, transform 0.2s;
-    min-width: 150px; /* Ensure buttons have a minimum width */
+    min-width: 150px;
 }
 
 #next-button:hover, #prev-button:hover {
@@ -58,5 +58,39 @@ body {
 
 #card-number {
     margin-top: 15px;
-    font-size: 1.2em; /* Slightly larger card number font */
+    font-size: 1.2em;
+}
+
+/* Styles for the favorite button */
+#favoriteButton {
+    border: none;
+    background: none;
+    font-size: 24px; /* Adjust size as needed */
+    cursor: pointer;
+    padding: 0;
+    color: lightblue; /* Light blue color for the heart */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+#favoriteButton.favorited {
+    color: red; /* Red color when favorited */
+}
+
+#reviewFavorites {
+    font-size: 20px;
+    padding: 10px 15px;
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s;
+    margin-top: 20px;
+}
+
+#reviewFavorites:hover {
+    background-color: #007bb5;
+    transform: scale(1.05);
 }
