@@ -33,10 +33,18 @@ body {
     margin-top: 20px;
 }
 
-#next-button, #prev-button {
+.favorite-buttons{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+#next-button,
+#prev-button {
     font-size: 20px;
-    padding: 20px 35px;
-    background-color: #4CAF50;
+    padding: 10px 15px;
+    background-color: violet;
     border: none;
     color: white;
     text-align: center;
@@ -44,16 +52,12 @@ body {
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s ease, transform 0.2s;
-    min-width: 150px;
 }
 
-#next-button:hover, #prev-button:hover {
-    background-color: #45a049;
+#next-button:hover,
+#prev-button:hover {
+    background-color: rgb(143, 41, 226);
     transform: scale(1.05);
-}
-
-#next-button {
-    background-color: violet;
 }
 
 #card-number {
@@ -65,15 +69,15 @@ body {
 #favoriteButton {
     border: none;
     background: none;
-    font-size: 24px; /* Adjust size as needed */
+    font-size: 24px;
     cursor: pointer;
     padding: 0;
-    color: lightblue; /* Light blue color for the heart */
-    transition: color 0.3s ease; /* Smooth color transition */
+    color: lightblue;
+    transition: color 0.3s ease;
 }
 
 #favoriteButton.favorited {
-    color: red; /* Red color when favorited */
+    color: red;
 }
 
 #reviewFavorites {
