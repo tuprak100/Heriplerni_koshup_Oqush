@@ -26,14 +26,6 @@ body {
     object-fit: contain;
 }
 
-#front img,
-#back img {
-    width: 100%; /* Image takes full width */
-    height: auto; /* Height adjusts proportionally */
-    object-fit: cover; /* Image covers the entire area */
-    object-position: top center; /* Align to top center */
-}
-
 .buttons {
     display: flex;
     justify-content: center;
