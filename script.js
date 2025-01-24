@@ -18,7 +18,7 @@ let images = [];
 let originalImages = []; // Store the original images here
 const numRows = 4;
 const numCols = 2;
-const numPages = 25;
+const numPages = 24;
 let favoriteWords = [];
 let isReviewingFavorites = false; // Track if reviewing favorites
 
