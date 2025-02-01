@@ -37,6 +37,12 @@ generateImageURLs();
 
 let currentCard = 0;
 
+// Load the saved progress from localStorage
+const savedProgress = localStorage.getItem('flashcardProgress');
+if (savedProgress) {
+    currentCard = parseInt(savedProgress);
+}
+
 function showCard() {
     cardImage.src = images[currentCard].src;
     cardNumberDisplay.textContent = `Card ${currentCard + 1} of ${images.length}`;
@@ -44,9 +50,9 @@ function showCard() {
     favoriteButton.textContent = images[currentCard].favorite ? "★" : "☆";
     if (images[currentCard].favorite) {
         favoriteButton.classList.add("favorited");
-      } else {
+    } else {
         favoriteButton.classList.remove("favorited");
-      }
+    }
     const cardSound = document.getElementById('cardSound');
     cardSound.loop = true;
     cardSound.play();
@@ -54,13 +60,14 @@ function showCard() {
 
 nextButton.addEventListener('click', () => {
     currentCard = (currentCard + 1) % images.length;
-    if (currentCard === 0 && isReviewingFavorites === false) {
+    if (currentCard === 0 && !isReviewingFavorites) {
         congratulationsMessage.style.display = 'block';
         cardImage.src = "";
         cardNumberDisplay.textContent = "";
     } else {
         showCard();
     }
+    localStorage.setItem('flashcardProgress', currentCard); // Save current card index
 });
 
 prevButton.addEventListener('click', () => {
@@ -71,11 +78,11 @@ prevButton.addEventListener('click', () => {
 favoriteButton.addEventListener('click', () => {
     images[currentCard].favorite = !images[currentCard].favorite;
     favoriteButton.textContent = images[currentCard].favorite ? "★" : "☆";
-        if (images[currentCard].favorite) {
+    if (images[currentCard].favorite) {
         favoriteButton.classList.add("favorited");
-      } else {
+    } else {
         favoriteButton.classList.remove("favorited");
-      }
+    }
     showCard();
 });
 
@@ -92,10 +99,11 @@ reviewFavoritesButton.addEventListener('click', () => {
 });
 
 allCardsButton.addEventListener('click', () => { // Add event listener for the new button
-    images = originalImages;// Restore the original images
+    images = originalImages; // Restore the original images
     currentCard = 0;
-    isReviewingFavorites = false;// Reset the flag
+    isReviewingFavorites = false; // Reset the flag
     showCard();
 });
 
+// Show the current card on load
 showCard();
